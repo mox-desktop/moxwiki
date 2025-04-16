@@ -1,6 +1,13 @@
 [book]
-authors = ["unixpariah"]
-language = "en"
-multilingual = false
-src = "src"
 title = "moxwiki"
+language = "en"
+
+[preprocessor.alerts]
+
+[output.html]
+git-repository-url = "https://github.com/unixpariah/moxwiki"
+edit-url-template = "https://github.com/unixpariah/moxwiki/edit/master/docs/{path}"
+no-section-label = true
+
+[output.html.fold]
+enable = true

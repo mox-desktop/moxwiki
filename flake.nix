@@ -20,7 +20,15 @@
     in
     {
       devShells = forAllSystems (pkgs: {
-        default = with pkgs; mkShell { buildInputs = [ mdbook ]; };
+        default =
+          with pkgs;
+          mkShell {
+            buildInputs = [
+              mdbook
+              markdown-oxide
+              dprint
+            ];
+          };
       });
     };
 }
