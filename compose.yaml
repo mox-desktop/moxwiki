@@ -1,0 +1,31 @@
+services:
+  watchtower:
+    image: containrrr/watchtower
+    command:
+      - "--label-enable"
+      - "--interval"
+      - "30"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  moxwiki:
+    build: .
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app               
+      - cargo-cache:/usr/local/cargo/registry
+      - target:/usr/src/app/target
+    ports:
+      - "3000:3000"
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    networks:
+      - web
+
+volumes:
+  cargo-cache:
+  target:
+networks:
+  web:
+    name: web
+    driver: bridge

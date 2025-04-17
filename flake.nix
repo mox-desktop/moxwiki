@@ -24,6 +24,7 @@
           with pkgs;
           mkShell {
             buildInputs = [
+              docker-compose
               mdbook
               markdown-oxide
               dprint
