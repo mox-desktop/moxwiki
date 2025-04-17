@@ -6,8 +6,8 @@ Welcome to **Mox**, a modern Wayland desktop environment built from the ground u
 
 Key features:
 
-- **Zero GUI frameworks**\
-  Mox relies directly on Wayland, Vulkan, and WGPU keeping the entire stack small, auditable, and lightning‑fast.
+- **Zero GUI libraries**\
+  Mox relies directly on Wayland and Vulkan, keeping the entire stack small, auditable, and lightning‑fast.
 
 - **Fully hardware-accelerated**\
   Different components use either Vulkan or WGPU, depending on their needs, for optimal performance.
