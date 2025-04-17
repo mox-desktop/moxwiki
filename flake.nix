@@ -24,7 +24,7 @@
           with pkgs;
           mkShell {
             buildInputs = [
-              docker-compose
+              podman-compose
               mdbook
               markdown-oxide
               dprint

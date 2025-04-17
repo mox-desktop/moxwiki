@@ -9,23 +9,19 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
 
   moxwiki:
-    build: .
-    working_dir: /usr/src/app
+    image: unixxpariah/moxwiki:prod
     volumes:
-      - .:/usr/src/app               
-      - cargo-cache:/usr/local/cargo/registry
-      - target:/usr/src/app/target
+      - .:/usr/src/app
     ports:
       - "3000:3000"
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
+    restart: unless-stopped
     networks:
       - web
 
-volumes:
-  cargo-cache:
-  target:
 networks:
   web:
     name: web
     driver: bridge
+
