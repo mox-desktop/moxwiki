@@ -10,6 +10,7 @@ services:
 
   moxwiki:
     image: ghcr.io/unixpariah/moxwiki:prod
+    platform: linux/arm64
     volumes:
       - .:/usr/src/app
     ports:
