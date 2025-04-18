@@ -9,14 +9,17 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
 
   moxwiki:
-    image: unixxpariah/moxwiki:prod
+    image: ghcr.io/unixpariah/moxwiki:prod
     volumes:
       - .:/usr/src/app
     ports:
       - "3000:3000"
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
-    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512M
     networks:
       - web
 

@@ -9,15 +9,15 @@ or `~/.config/moxidle/config.lua`. A config file is required; moxidle won’t ru
 
 # General
 
-| variable               | description                                                                      | type   | default |
-| ---------------------- | -------------------------------------------------------------------------------- | ------ | ------- |
-| lock_cmd               | command to run when receiving a dbus lock event (e.g. loginctl lock-session)     | string | empty   |
-| unlock_cmd             | command to run when receiving a dbus unlock event (e.g. loginctl unlock-session) | string | empty   |
-| before_sleep_cmd       | command to run when receiving a dbus prepare_sleep event                         | string | empty   |
-| after_sleep_cmd        | command to run when receiving a dbus post prepare_sleep event                    | string | empty   |
-| ignore_dbus_inhibit    | whether to ignore dbus-sent idle inhibit events (e.g. from firefox)              | bool   | false   |
-| ignore_systemd_inhibit | whether to ignore systemd-inhibit --what=idle inhibitors                         | bool   | false   |
-| ignore_audio_inhibit   | whether to ignore ihbitition when audio is played (e.g. from firefox)            | bool   | false   |
+| variable                 | description                                                                      | type   | default |
+| ------------------------ | -------------------------------------------------------------------------------- | ------ | ------- |
+| `lock_cmd`               | command to run when receiving a dbus lock event (e.g. loginctl lock-session)     | string | empty   |
+| `unlock_cmd`             | command to run when receiving a dbus unlock event (e.g. loginctl unlock-session) | string | empty   |
+| `before_sleep_cmd`       | command to run when receiving a dbus prepare_sleep event                         | string | empty   |
+| `after_sleep_cmd`        | command to run when receiving a dbus post prepare_sleep event                    | string | empty   |
+| `ignore_dbus_inhibit`    | whether to ignore dbus-sent idle inhibit events (e.g. from firefox)              | bool   | false   |
+| `ignore_systemd_inhibit` | whether to ignore systemd-inhibit --what=idle inhibitors                         | bool   | false   |
+| `ignore_audio_inhibit`   | whether to ignore ihbitition when audio is played (e.g. from firefox)            | bool   | false   |
 
 # Timeouts
 

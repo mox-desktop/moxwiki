@@ -28,6 +28,7 @@
               mdbook
               markdown-oxide
               dprint
+              docker
             ];
           };
       });
