@@ -46,17 +46,17 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: wiki-ingress
-  namespace: moxwiki    
+  namespace: moxwiki
 spec:
   ingressClassName: ingress-nginx
   rules:
-    - http:
+    - host: moxwiki.local
+      http:
         paths:
-          - path: /moxwiki
+          - path: /
             pathType: Prefix
             backend:
               service:
                 name: moxwiki
                 port:
                   number: 80
-
