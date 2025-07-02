@@ -20,16 +20,20 @@
     in
     {
       devShells = forAllSystems (pkgs: {
-        default =
-          with pkgs;
-          mkShell {
-            buildInputs = [
+        default = pkgs.mkShell {
+          buildInputs = builtins.attrValues {
+            inherit (pkgs)
               mdbook
               markdown-oxide
               dprint
               docker
-            ];
+              ;
           };
+        };
+      });
+
+      packages = forAllSystems (pkgs: {
+        default = pkgs.callPackage ./nix/package.nix { };
       });
     };
 }

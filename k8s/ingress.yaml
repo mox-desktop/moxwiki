@@ -4,6 +4,10 @@ metadata:
   name: wiki-ingress
   namespace: moxwiki
 spec:
+  tls:
+  - hosts:
+      - moxwiki.your-domain.com
+    secretName: ssl-cert
   ingressClassName: ingress-nginx
   rules:
     - host: moxwiki.your-domain.com
