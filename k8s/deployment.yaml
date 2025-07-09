@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: moxwiki
-          image: ghcr.io/unixpariah/moxwiki:main-c95c5d5
+          image: ghcr.io/mox-desktop/moxwiki:latest
           ports:
             - containerPort: 3000
           resources:

@@ -3,8 +3,8 @@ title = "moxwiki"
 language = "en"
 
 [output.html]
-git-repository-url = "https://github.com/unixpariah/moxwiki"
-edit-url-template = "https://github.com/unixpariah/moxwiki/edit/master/docs/{path}"
+git-repository-url = "https://github.com/mox-desktop/moxwiki"
+edit-url-template = "https://github.com/mox-desktop/moxwiki/edit/master/docs/{path}"
 no-section-label = true
 
 [output.html.fold]

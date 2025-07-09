@@ -17,7 +17,7 @@ jobs:
         with:
           nix_path: nixpkgs=channel:nixos-unstable
       
-      - name: Setup Cachix (optional - for faster builds)
+      - name: Setup Cachix
         uses: cachix/cachix-action@v12
         with:
           name: nix-community
@@ -33,16 +33,13 @@ jobs:
       - name: Build and push with Nix
         env:
           REGISTRY: ghcr.io
-          IMAGE_NAME: ghcr.io/unixpariah/moxwiki
+          IMAGE_NAME: ghcr.io/mox-desktop/moxwiki
         run: |
-          echo "Building Docker image with Nix..."
           nix build .
           
-          echo "Loading image into Docker..."
           docker load < result
           
           BUILT_IMAGE=$(docker images --format "{{.Repository}}:{{.Tag}}" | grep moxwiki | head -1)
-          echo "Built image: $BUILT_IMAGE"
           
           BRANCH=${GITHUB_REF#refs/heads/}
           COMMIT_SHA=${GITHUB_SHA::7}
@@ -54,7 +51,6 @@ jobs:
             "${IMAGE_NAME}:${BRANCH}-${COMMIT_SHA}"
           )
           
-          # Tag and push
           for tag in "${TAGS[@]}"; do
             echo "Tagging and pushing: $tag"
             docker tag "$BUILT_IMAGE" "$tag"
